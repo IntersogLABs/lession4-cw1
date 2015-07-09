@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,11 +13,20 @@
 
 	<script type="text/javascript">
 		function min(array){
-
+	var min;
+		for(var i=0;i<array.length;i++)
+		if(i==0) min = arr[i]
+		else{
+		if(min<arr[i]) min = arr[i]
     	}
 
     	function max(array){
-    		
+    		var max;
+		for(var i=0;i<array.length;i++)
+		if(i==0) max = arr[i]
+		else{
+		if(max<arr[i]) max = arr[i]
+}
     	}
 
 	    window.onload = function(){
