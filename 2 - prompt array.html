@@ -19,17 +19,17 @@
 			var value = prompt("Введите число для массива!",0);
 			if(value !== ''){
 				result.push(+value);
-			}else{
+			} else {
 				break;
 			}
 		}
-		var sum =  result.reduce(function(a,b){
-			return a+b;
+		var sum =  result.reduce(function(accum,value){
+			return accum + value;
 		})
 		alert(sum);
 	}
 		 window.onload = function(){
-		 calculate();
+		 	calculate();
 		}
 	</script>
 </head>
