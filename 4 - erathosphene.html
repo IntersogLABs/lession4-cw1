@@ -14,7 +14,28 @@
 	<script type="text/javascript">
 		window.onload = function(){
 			// Удачи!
+			console.log(sieve(100))
 		}
+		function sieve(n){
+			var all  = []
+			for (var i = 2; i <= n; i++) {
+				all.push(i)
+			};
+			
+			var i = 0
+			var p = all[i]
+			for (; p*p < n; i++) {
+				for (var j = i+1; j < all.length; j++) {
+					if(all[j] % p === 0){
+						all.splice(j, 1)
+						j--;
+					}
+				};
+				p = all[i+1]
+			};
+			return all
+		} 
+
 	</script>
 </head>
 <body>
