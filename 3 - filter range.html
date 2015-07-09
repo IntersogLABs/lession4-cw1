@@ -13,11 +13,17 @@
 
 	<script type="text/javascript">
 		function filterRange(arr, a, b) {
-
+		var result = [];
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] >= a && arr[i] <= b){
+					result.push(arr[i]);
+				}
+			}
+			return result;
 		}
 
 		window.onload = function(){
-			var array = [
+			var arr = [
 				843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284, 
 				256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
 			]
