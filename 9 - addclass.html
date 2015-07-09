@@ -13,11 +13,24 @@
 
 	<script type="text/javascript">
 		function addClass(obj, cls) {
+			var classArr = obj.className.split(' ')
 
+			var predicate = classArr.every(function(classStr){
+				return classStr.trim() !== cls.trim()
+			})
+			if(predicate){
+				classArr.push(cls.trim())
+				obj.className = classArr.join(' ')
+			}
 		};
 
 		function removeClass(obj, cls) {
-			
+			var classArr = obj.className.split(' ');
+
+			obj.className = classArr.filter(function(classStr){
+				return classStr.trim() !== cls.trim();
+			}).join(' ');
+				
 		};
 		
 
