@@ -18,17 +18,15 @@
 		while(true){
 			var value = prompt("Введите число для массива!",0);
 			if(value !== ''){
-			result.push(+value);
+				result.push(+value);
 			}else{
-			break;
+				break;
 			}
 		}
 		var sum =  result.reduce(function(a,b){
 			return a+b;
-		
 		})
 		alert(sum);
-	
 	}
 		 window.onload = function(){
 		 calculate();
