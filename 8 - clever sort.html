@@ -61,7 +61,11 @@
 				}
 			];
 
-			var filteredPeople = people;
+			var filteredPeople = people.filter(function(person){
+				return person.age >= 18
+			}).sort(function(person1, person2){
+				return person1.age - person2.age
+			});
 			console.log(filteredPeople);
 		}
 	</script>
