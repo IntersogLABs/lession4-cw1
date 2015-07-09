@@ -13,11 +13,15 @@
 
 	<script type="text/javascript">
 		function min(array){
-
+			return array.reduce(function(accum,value){
+				return value < accum ? value : accum;
+			}, array[0])
     	}
 
     	function max(array){
-    		
+    		return array.reduce(function(accum,value){
+				return value > accum ? value : accum;
+			}, array[0])
     	}
 
 	    window.onload = function(){

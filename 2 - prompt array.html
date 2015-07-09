@@ -12,10 +12,25 @@
 
 
 	<script type="text/javascript">
-		// window.onload = function(){
-		// 	var value = prompt("Введите значение переменной value", 0);
-		// 	alert("Значение переменной value = " + value);
-		// }
+	
+	function calculate(){
+		var result = [];
+		while(true){
+			var value = prompt("Введите число для массива!",0);
+			if(value !== ''){
+				result.push(+value);
+			} else {
+				break;
+			}
+		}
+		var sum =  result.reduce(function(accum,value){
+			return accum + value;
+		})
+		alert(sum);
+	}
+		 window.onload = function(){
+		 	calculate();
+		}
 	</script>
 </head>
 <body>
