@@ -13,7 +13,16 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
+			var arr=[], str="";
+			for(var i=1;i<11;i++) {
+				arr[i]=[];
+				str+='\n';
+				for(var j=1;j<11;j++) {
+					arr[i][j]=i*j;
+					str+=arr[i][j]+'\t';
+				}
+			}
+			console.log(str);
 		}
 	</script>
 </head>
