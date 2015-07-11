@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,8 +13,21 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
-		}
+				var arr=[],tmp;
+				for(var i=2;i<100;i++) {
+					arr[i-2]=i;
+				}
+					for(var i=0, p=arr[i];p*p<100;p=arr[++i]) {
+						for(var j=2;j<100;j++) {	
+							tmp=arr.indexOf(j*p)
+						   if(tmp!=-1) {				
+							arr.splice(tmp,1);
+							j--;
+							}
+						}
+					}
+				return arr;
+			}
 	</script>
 </head>
 <body>
