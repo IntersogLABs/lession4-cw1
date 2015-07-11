@@ -12,14 +12,34 @@
 
 
 	<script type="text/javascript">
+		//check if object has any enumerable own property
 		function isEmpty(obj) {
-
-			return false
+			return Object.keys(obj).length == 0
 		}
-
+		//check if object has any(enumerable or not enumerable) own property
+		function isCompletelyEmpty (obj) {
+			return Object.getOwnPropertyNames(obj).length == 0
+		}
 		window.onload = function(){
 			var obj = {};
+			var s1 = ""
+			var s2 = "d"
+			var a1 = []
+			var a2 = [1,2,3]
 			console.log(isEmpty(obj))
+			console.log(isCompletelyEmpty(obj))
+			console.log("\n")
+			console.log(isEmpty(s1))
+			console.log(isCompletelyEmpty(s1))
+			console.log("\n")
+			console.log(isEmpty(s2))
+			console.log(isCompletelyEmpty(s2))
+			console.log("\n")
+			console.log(isEmpty(a1))
+			console.log(isCompletelyEmpty(a1))
+			console.log("\n")
+			console.log(isEmpty(a2))
+			console.log(isCompletelyEmpty(a2))
 		}
 	</script>
 </head>
