@@ -12,23 +12,27 @@
 
 
 	<script type="text/javascript">
+		function hasClass(obj, cls) {
+  			return obj.className.split(' ').some(function(classStr){
+  			 return classStr === cls.trim()
+  			})
+		}
+
 		function addClass(obj, cls) {
 			var classArr = obj.className.split(' ')
 
-			var predicate = classArr.every(function(classStr){
-				return classStr.trim() !== cls.trim()
-			})
-			if(predicate){
-				classArr.push(cls.trim())
-				obj.className = classArr.join(' ')
+			if( !hasClass(obj, cls) ){
+				classArr.push( cls.trim() )
 			}
+			obj.className = classArr.join(' ')
 		};
 
 		function removeClass(obj, cls) {
 			var classArr = obj.className.split(' ');
+			cls = cls.trim();
 
-			obj.className = classArr.filter(function(classStr){
-				return classStr.trim() !== cls.trim();
+			obj.className = classArr.filter(function(ownClass){
+				return ownClass !== cls;
 			}).join(' ');
 				
 		};
