@@ -13,13 +13,9 @@
 
 	<script type="text/javascript">
 		function filterRange(arr, a, b) {
-			var result = []
-			for (var i = 0; i < arr.length; i++) {
-				if(a <= arr[i] &&  arr[i] <= b){
-					result.push(arr[i])
-				}
-			};
-			return result
+			return arr.filter(function(it){
+				return a <= it &&  it <= b
+			})
 		}
 
 		window.onload = function(){
