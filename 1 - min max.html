@@ -13,23 +13,21 @@
 
 	<script type="text/javascript">
 		function min(array){
-			var m = array[0]
-			for (var i = 1; i < array.length; i++) {
-				if(m > array[i]){
-					m = array[i]
+			return array.reduce(function(min, it){
+				if(it < min){
+					return it
 				}
-			};
-			return m
+				return min
+			})
     	}
 
     	function max(array){
-    		var m = array[0]
-			for (var i = 1; i < array.length; i++) {
-				if(m < array[i]){
-					m = array[i]
+			return  array.reduce(function(min, it){
+				if(it > min){
+					return it
 				}
-			};
-			return m
+				return min
+			})
     	}
 
 	    window.onload = function(){
