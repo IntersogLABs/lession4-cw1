@@ -13,24 +13,19 @@
 
 	<script type="text/javascript">
 	function eratoshpen(){
-		var arr = [];
+		var result = [],
+		 arr = [];
 		for(var i = 2; i <= 100; i++){
 			arr[i] = i;
 		}
 		for(var i = 0; i < arr.length; i++){
+			if(arr[i] == undefined) continue;
 			for(var j = arr[i]*arr[i] ; j <= 100; j+=arr[i]){
 				 delete arr[j];
 			}
+			result.push(arr[i]);
 		}
-		for(var i = 0;i< arr.length;i++){
-			if(!arr[i]){
-				arr.splice(i--,1);
-			}
-		}
-		alert(arr);
-		
-		
-	
+		alert(result);
 	}
 		
 	
