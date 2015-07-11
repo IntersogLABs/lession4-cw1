@@ -12,16 +12,45 @@
 
 
 	<script type="text/javascript">
-		window.onload = function(){
+
+		function min(array){
+			return array.reduce(function(min, item){
+	    		return (item < min) ? item : min;
+	    		})
+
+    	}
+
+    	function max(array){
+    		return array.reduce(function(max, item){
+	    		return (item > max) ? item : max;
+	    	})
+    	}
+
+    	function filterRange(arr, a, b) {
+    		return arr.filter(function(item){
+	    		return ((item >= a) && (item <= b));
+	    	})
+    	}
+
+    	window.onload = function(){
 			// Код ниже получает из массива строк новый массив, содержащий их длины:
 			var arr = ["Есть", "жизнь", "на", "Марсе"];
 
-			var arrLength = [];
-			for (var i = 0; i < arr.length; i++) {
-				arrLength[i] = arr[i].length;
-			}
+			var arrLength = arr.map(function(item){
+				return item.length;
+			}) // [4,5,2,5]
 
-			console.log( arrLength ); // [4,5,2,5]
+			console.log("Длины строк массива: " + arrLength); 
+
+			var array = [
+	    		843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284, 
+	    		256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
+	    	];
+
+	    	console.log("minimal: ", min(array));
+	    	console.log("maximal: ", max(array));
+			console.log("filtered: ", filterRange(array, 200, 300));
+
 		}
 	</script>
 </head>

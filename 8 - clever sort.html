@@ -12,6 +12,19 @@
 
 
 	<script type="text/javascript">
+
+		function filterPeople(people){
+			var filteredPeople = people.filter(function(item){
+				return item.age >= 18;
+			});
+
+			filteredPeople.sort(function(a,b){
+				return a.age - b.age
+			});
+
+			return filteredPeople;
+		}
+
 		window.onload = function(){
 			var people = [
 				{
@@ -61,7 +74,7 @@
 				}
 			];
 
-			var filteredPeople = people;
+			var filteredPeople = filterPeople(people);
 			console.log(filteredPeople);
 		}
 	</script>

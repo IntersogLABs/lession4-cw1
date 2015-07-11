@@ -12,10 +12,18 @@
 
 
 	<script type="text/javascript">
-		// window.onload = function(){
-		// 	var value = prompt("Введите значение переменной value", 0);
-		// 	alert("Значение переменной value = " + value);
-		// }
+		window.onload = function(){
+			var result = 0;
+			var value = 0;
+			while (true){
+				result += Number(value);
+				value = prompt("Введите число", 0);
+				if ((value===""||isNaN(value)||value===null)){
+					break
+				}
+			}
+			alert("Сумма чисел = " + result);
+		}
 	</script>
 </head>
 <body>
