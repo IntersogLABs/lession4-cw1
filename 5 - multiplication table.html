@@ -22,14 +22,10 @@
 			for (var i = 0; i < table.length; i++) {
 				for (var j = 0; j < table[i].length; j++) {
 					var v = table[i][j];
-					str += v + " "
-					if(v<100) str += " ";
-					if(v<10) str += " "
-					
+					str += v + "\t"
 				}
 				str += "\n"
 			}
-
 			return str
 		}
 		function multiTable(n){
