@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -12,10 +12,18 @@
 
 
 	<script type="text/javascript">
-		// window.onload = function(){
-		// 	var value = prompt("Введите значение переменной value", 0);
-		// 	alert("Значение переменной value = " + value);
-		// }
+		window.onload = function(){
+			var tmp=0, sum=0, i=0, arr=[];
+			while(true){
+		 	tmp=prompt("Enter the number: ");
+		 	if(isNaN(tmp) || tmp===null || tmp===""){
+		 		break;
+		 	}
+		 	sum+=+tmp;
+		 	arr[i++]=tmp;
+		 }
+		 alert(sum);
+		 }
 	</script>
 </head>
 <body>
