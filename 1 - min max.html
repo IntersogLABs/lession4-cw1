@@ -13,14 +13,14 @@
 
 	<script type="text/javascript">
 		function min(array){
-			return array.reduce(function(accum,value){
-				return value < accum ? value : accum;
+			return array.reduce(function(minimal,value){
+				return value < minimal ? value : minimal;
 			}, array[0])
     	}
 
     	function max(array){
-    		return array.reduce(function(accum,value){
-				return value > accum ? value : accum;
+    		return array.reduce(function(maximal,value){
+				return value > maximal ? value : maximal;
 			}, array[0])
     	}
 
