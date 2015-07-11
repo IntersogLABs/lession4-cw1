@@ -13,11 +13,8 @@
 
 	<script type="text/javascript">
 		function isEmpty(obj) {
-			var empty = true
-			for(var key in obj) {
-				empty = false;
-			}
-			return empty;
+			var countOfProperties = Object.keys(obj).length;
+			return countOfProperties === 0 ? true : false;
 		}
 
 		window.onload = function(){
