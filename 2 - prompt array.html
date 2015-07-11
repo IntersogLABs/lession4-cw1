@@ -17,14 +17,14 @@
 		var result = [];
 		while(true){
 			var value = prompt("Введите число для массива!",0);
-			if(value !== ''){
+			if(value !== null && value !== '' && !isNaN(value) ){
 				result.push(+value);
 			} else {
 				break;
 			}
 		}
-		var sum =  result.reduce(function(accum,value){
-			return accum + value;
+		var sum =  result.reduce(function(sum,value){
+			return sum + value;
 		})
 		alert(sum);
 	}
