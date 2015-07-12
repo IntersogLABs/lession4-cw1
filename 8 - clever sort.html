@@ -61,7 +61,17 @@
 				}
 			];
 
-			var filteredPeople = people;
+			function sortByAge(a, b){
+				return a.age - b.age;
+			};
+			
+			function isOlderThen18(value){
+				return value['age'] >= 18;
+			};
+			
+			people.sort(sortByAge);
+			var filteredPeople = people.filter(isOlderThen18);
+
 			console.log(filteredPeople);
 		}
 	</script>

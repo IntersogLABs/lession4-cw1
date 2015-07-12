@@ -12,22 +12,41 @@
 
 
 	<script type="text/javascript">
+//		function min(array){
+//			var min = array[0];
+//			for (var i=1; i < array.length; i++) {
+//				if (array[i] < min) {min = array[i]};
+//			}
+//			return min;
+//	  	}
+
 		function min(array){
+			return array.reduce(function(min, item){
+				return min = (min <= item) ? min : item;
+			});
+		}
+//	  	function max(array){
+//			var max = array[0];
+//			for (var i=1; i < array.length; i++) {
+//				if (array[i] > max) {max = array[i]};
+//			}
+//			return max;
+//		}
 
-    	}
-
-    	function max(array){
-    		
-    	}
+		function max(array){
+			return array.reduce(function(max, item){
+				return max = (max >= item) ? max : item;
+			});
+		}
 
 	    window.onload = function(){
-	    	var array = [
+	    	var arr = [
 	    		843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284, 
 	    		256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
 	    	]
 	    	
-	    	console.log("minimal: ", min(array));
-	    	console.log("maximal: ", max(array));
+	    	console.log("minimal: ", min(arr));
+	    	console.log("maximal: ", max(arr));
 	    }
 	</script>
 </head>
