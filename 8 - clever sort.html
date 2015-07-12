@@ -12,13 +12,11 @@
 
 
 	<script type="text/javascript">
-		function mature(human) {
+		function isMature(human) {
 			return human.age >= 18
 		}
 		function younger(human1, human2){
-			if(human1.age === human2.age) 
-				return 0
-			return human1.age < human2.age ? -1 : 1
+			return human1.age - human2.age
 		}
 		window.onload = function(){
 			var people = [
@@ -69,7 +67,7 @@
 				}
 			];
 
-			var filteredPeople = people.filter(mature).sort(younger);
+			var filteredPeople = people.filter(isMature).sort(younger);
 			console.log(filteredPeople);
 		}
 	</script>
