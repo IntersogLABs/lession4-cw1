@@ -12,24 +12,12 @@
 
 
 	<script type="text/javascript">
-		function min(array){
-			var min=array[0];
-			for(var i=1;i<array.length;i++) {
-				if(array[i]<min){
-					min=array[i];
-				}
-			}
-			return min;
+		function min(array){        
+	        return array.reduce(function(prevValue, value) { return prevValue>value? value:prevValue; }, array[0]);
     	}
 
-    	function max(array){
-    		var max=array[0];
-			for(var i=1;i<array.length;i++) {
-				if(array[i]>max){
-					max=array[i];
-				}
-			}
-			return max;
+    	function max(array){ 		
+			return array.reduce(function(prevValue, value) { return prevValue<value? value:prevValue; }, array[0]);
     	}
 
 	    window.onload = function(){
