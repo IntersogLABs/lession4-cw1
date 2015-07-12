@@ -12,12 +12,12 @@
 
 
 	<script type="text/javascript">
-		function min(array){
-
+		function min(array){        
+	        return array.reduce(function(prevValue, value) { return prevValue>value? value:prevValue; }, array[0]);
     	}
 
-    	function max(array){
-    		
+    	function max(array){ 		
+			return array.reduce(function(prevValue, value) { return prevValue<value? value:prevValue; }, array[0]);
     	}
 
 	    window.onload = function(){

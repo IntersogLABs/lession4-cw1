@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,7 +13,7 @@
 
 	<script type="text/javascript">
 		function filterRange(arr, a, b) {
-
+			return arr.filter(function(item) { return a<=item && item<=b});
 		}
 
 		window.onload = function(){

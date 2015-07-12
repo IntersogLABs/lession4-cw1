@@ -61,7 +61,26 @@
 				}
 			];
 
-			var filteredPeople = people;
+			var filteredPeople = people.reduce(function (prevPerson,person,index,arr) {
+				if(person.age<18) {
+					return prevPerson;
+				}
+				if(prevPerson.length==0) {
+					prevPerson.push(person);
+					return prevPerson;
+				}
+				for(var i=0;i<prevPerson.length;i++) {
+					if(prevPerson[i].age<person.age) {
+						prevPerson.splice(i,0,person);
+						break;
+					}
+					if(i==prevPerson.length-1) {
+						prevPerson.push(person);
+						break;
+					}
+				}
+				return prevPerson;
+				},[]);
 			console.log(filteredPeople);
 		}
 	</script>
