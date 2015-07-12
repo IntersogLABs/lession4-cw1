@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,11 +13,25 @@
 
 	<script type="text/javascript">
 		function min(array){
-
+		//var min;
+		//for(var i=0;i<array.length;i++)
+		//if(i==0 || min>arr[i]) min = arr[i]
+		//return min
+		return array.reduce(function (memo, item){
+		if(memo == undefined || memo > item) {memo = item}
+		return memo
+		}, array[0])
     	}
 
     	function max(array){
-    		
+    	//	var max;
+		//for(var i=0;i<array.length;i++)
+		//if(i==0 || max<arr[i]) max = arr[i]
+		//return max
+		return array.reduce(function (memo, item){
+		if(memo == undefined || memo < item) {memo = item}
+		return memo
+		}, array[0])
     	}
 
 	    window.onload = function(){
@@ -25,7 +39,7 @@
 	    		843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284, 
 	    		256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
 	    	]
-	    	
+	    	console.log(array.sort(function(a, b){return a-b}))
 	    	console.log("minimal: ", min(array));
 	    	console.log("maximal: ", max(array));
 	    }
