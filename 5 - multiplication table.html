@@ -13,7 +13,36 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
+						
+			function fillingArray(i, j, arr){ 
+				if(j > size) {j = 1; i += 1;}
+				if(i > size) return;
+				arr[i-1].push(i * j);
+				fillingArray(i, j + 1, arr)
+			}
+			
+			function show(size, arr)  //print array in console
+			{
+			var str = "\n"
+			for(var i = 0; i < size; i++)
+			{
+				for(var j = 0; j < size; j++)
+				{
+				str += arr[j][i] + "\t";
+				}
+				str += "\n";
+			}
+			console.log(str);
+			}
+			
+			var size = 10
+			var matrix = new Array(size);
+			for(var k = 0; k < size; k++)
+			matrix[k] = new Array(); 
+			
+			fillingArray(1, 1, matrix)
+			show(size, matrix)
+				
 		}
 	</script>
 </head>

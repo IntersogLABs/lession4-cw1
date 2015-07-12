@@ -12,8 +12,17 @@
 
 
 	<script type="text/javascript">
-		function filterRange(arr, a, b) {
-
+		/*function filterRange(arr, a, b) {
+			var newArr = new Array();
+			for(var i = 0; i < arr.length; i++)
+			{
+				if(arr[i] >= a && arr[i] <= b) newArr.push(arr[i]);
+			}
+			return newArr;
+		}*/
+		function filterRange(arr, a, b)
+		{
+			return arr.filter(function(item){return item >= a && item <= b})
 		}
 
 		window.onload = function(){
@@ -22,7 +31,7 @@
 				256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
 			]
 			
-			var filtered = filterRange(arr, 200, 300);
+			var filtered = filterRange(array, 200, 300);
 			console.log("filtered: ", filtered);
 		}
 	</script>

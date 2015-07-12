@@ -12,9 +12,54 @@
 
 
 	<script type="text/javascript">
+		/*window.onload = function f(){
+			var n = 100
+			;var newArr = new Array()
+			;
+			for(var i=2;i<n;i++)
+			{
+			newArr.push(i);
+			}
+			
+			for(var i=0; i<newArr.length; i++)	
+			{
+			//debugger;
+				for(var j=i+newArr[i]; j<newArr.length; j+=newArr[i]){
+				if(newArr[j]%newArr[i]==0){
+					newArr.splice(j,1);
+					j--;
+					}
+				}
+			}
+			
+			console.log(newArr);
+		}*/
+		
 		window.onload = function(){
-			// Удачи!
+		var n = 100 // size of newArr
+		var newArr = new Array()
+		
+		for(var i = 2; i < n; i++){//filling array
+		newArr.push(i);
 		}
+		
+		function rec(i, j){
+			if(newArr[j] % newArr[i] == 0) { //delete element of array
+				newArr.splice(j, 1);
+				j--;
+				}
+					if(j >= newArr.length){ //condition for increment i
+						j = i += 1;
+					}
+						if(i >= newArr.length) return; //condition for the end of function
+		
+		rec(i, j + newArr[i])
+		}
+		
+		rec(0, 0+newArr[0]);
+		console.log(newArr);
+		}
+		
 	</script>
 </head>
 <body>

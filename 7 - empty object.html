@@ -13,8 +13,12 @@
 
 	<script type="text/javascript">
 		function isEmpty(obj) {
-
-			return false
+			for(item in obj){
+				if(obj.hasOwnProperty(item)){
+					return false;
+					}
+			}
+			return true;
 		}
 
 		window.onload = function(){

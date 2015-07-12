@@ -13,18 +13,24 @@
 
 	<script type="text/javascript">
 		function addClass(obj, cls) {
-
+			if(obj.className.indexOf(cls) != -1) return;
+			obj.className += " " + cls
 		};
 
 		function removeClass(obj, cls) {
+			if(obj.className.indexOf(cls) == -1) return;
+			var newArr = obj.className.split(" ")
+			obj.className = "";
+			newArr.forEach(function(item){if(item != cls) obj.className += item + " ";})
 			
 		};
 		
 
 		window.onload = function(){
 			var obj = {
-				className: 'sidebar menu menu'
+				className: 'sidebar menu menu menu'
 			};
+			addClass(obj, "active");
 			addClass(obj, "active");
 			removeClass(obj, "menu");
 			console.log(obj.className); //= "sidebar active"

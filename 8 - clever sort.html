@@ -60,8 +60,16 @@
 					"phone": "+1 (980) 583-2525"
 				}
 			];
-
-			var filteredPeople = people;
+			function filterAge(item, index){
+			return item.age >= 18
+			}
+			
+			function sortByAge(obj1, obj2)
+			{
+			return obj1.age - obj2.age;
+			}
+			
+			var filteredPeople = people.filter(filterAge).sort(sortByAge);
 			console.log(filteredPeople);
 		}
 	</script>

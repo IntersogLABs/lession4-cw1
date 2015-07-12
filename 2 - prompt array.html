@@ -15,12 +15,16 @@
 		 window.onload = function(){
 		 	var array = new Array();
 			while(true){
-			var value = prompt("Введите значение переменной value", 0);
-			if(value=="" || value!=1 || value!=2 || value!=3 || value!=4 || value!=5 || value!=6 || value!=7 || value!=8 ||value!=9 || value!=0)
-		 	array.push(value);
+				var value = prompt("Введите значение переменной value", 0);
+				if(value === "" || value == null || isNaN(value)) // condition for the end of while
+				{break;}
+				array.push(value);
 			}
-			alert("Значение переменной value = " + value);
-			
+			var sum = 0;
+			for(var i = 0; i < array.length; i++)
+			{sum = sum  + parseInt(array[i]);}
+			alert("Значение переменной sum = " + sum);
+			//alert("Значение переменной sum = " + value);
 		 }
 	</script>
 </head>
