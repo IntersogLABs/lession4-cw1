@@ -13,7 +13,30 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
+			var n = 100;
+			var result = 0;
+			var array = [];
+			for (i = 2; i <= n; i++){
+				array.push(i);
+			}
+			var j = 0;
+			var p = array[j];
+			while(p*p < n){
+				for (var x = 2; true; x++){
+					if (p*x > n){
+						break
+					}
+					else if (array.indexOf(p*x) != -1){
+						array.splice(array.indexOf(p*x), 1);
+					}
+				}
+				j += 1;
+				p = array[j];
+			}
+			for (var i = 0; i < array.length; i++){
+				result += array[i];
+			}
+			alert("Сумма: " + result)
 		}
 	</script>
 </head>
