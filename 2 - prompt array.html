@@ -12,10 +12,20 @@
 
 
 	<script type="text/javascript">
-		// window.onload = function(){
-		// 	var value = prompt("Введите значение переменной value", 0);
-		// 	alert("Значение переменной value = " + value);
-		// }
+		 window.onload = function(){
+		 	var ar = [], i = 0, sum = 0;
+		 	for(;true;){
+		 		var value = prompt("Введите значение переменной value", 0);
+				if (value === "" || value === " " || isNaN(value) || value === null){
+		 			break;
+		 		}else{
+		 			ar[i] = +value;
+		 			i++;
+		 			sum += +value;
+		 		}
+		 	}
+		 	alert("Сумма введенных значений равна:  " + sum);
+		 }
 	</script>
 </head>
 <body>

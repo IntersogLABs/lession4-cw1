@@ -13,8 +13,8 @@
 
 	<script type="text/javascript">
 		function isEmpty(obj) {
-
-			return false
+			for (var id in obj) return false;
+			return true;
 		}
 
 		window.onload = function(){

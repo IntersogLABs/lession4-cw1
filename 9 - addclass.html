@@ -13,17 +13,24 @@
 
 	<script type="text/javascript">
 		function addClass(obj, cls) {
-
+			var names = obj.className.split(' ');		// Transforms obj into Array
+			names = names.filter(function (item){ return item !== '' });	//	Removes empty items produced by extra Spaces.
+			if(!names.some(function(value) { return value === cls })){		//	Adds cls if it is not present yet.
+				names.push(cls);						//	Adds cls if it is not present yet.
+			}
+			obj.className = names.join(' ');			// Transforms Array into obj back.
 		};
 
 		function removeClass(obj, cls) {
-			
+			var names = obj.className.split(' ');		// Transforms obj into Array.
+			names = names.filter(function (item){ return item !== '' && item !== cls });	//	Removes cls and empty items.
+			obj.className = names.join(' ');			// Transforms Array into obj back.
 		};
-		
+	
 
 		window.onload = function(){
 			var obj = {
-				className: 'sidebar menu menu'
+				className: 'sidebar      menu menu'
 			};
 			addClass(obj, "active");
 			removeClass(obj, "menu");
