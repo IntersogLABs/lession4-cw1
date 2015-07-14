@@ -12,17 +12,61 @@
 
 
 	<script type="text/javascript">
+
+		// min in imperative style
+		/*
 		function min(array){
+			if(!Array.isArray(array)){
+				throw Error("First argument of min is not array")
+			}
+			var result = array[0];
+			for (var i = 1; i < array.length; i++) {
+				if(array[i]<result)
+					result=array[i];
+			}
+			return result;
+		}
+		*/
+		// min in functional style
+		function min(array) {
+			if (!Array.isArray(array)) {
+				throw Error("First argument of min is not array")
+			}
 
-    	}
+			return array.reduce(function(currentMin, currentElement){
+				return (currentElement < currentMin) ? currentElement : currentMin;
+			});
+		}
 
-    	function max(array){
-    		
-    	}
+		// max in imperative style
+		/*
+		function max(array){
+			if(!Array.isArray(array)) {
+				throw Error("First argument of max is not array")
+			}
+			var result = array[0];
+			for (var i = 1; i < array.length; i++) {
+				if(array[i]>result)
+					result=array[i];
+			}
+			return result;
+		}
+		*/
+
+		// max in functional style
+		function max(array) {
+			if (!Array.isArray(array)) {
+				throw Error("First argument of max is not array")
+			}
+
+			return array.reduce(function(currentMax, currentElement){
+				return (currentElement > currentMax) ? currentElement : currentMax;
+			});
+		}
 
 	    window.onload = function(){
 	    	var array = [
-	    		843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284, 
+	    		843, 661, 281, 324, 222, 529, 606, 507, 74, 578, 994, 916, 664, 251, 766, 292, 358, 480, 474, 85, 181, 379, 660, 171, 284,
 	    		256, 78, 795, 319, 671, 164, 332, 18, 55, 929, 704, 809, 397, 316, 416, 800, 951, 827, 1, 114, 73, 164, 447, 794, 813
 	    	]
 	    	

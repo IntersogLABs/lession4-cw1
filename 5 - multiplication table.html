@@ -13,7 +13,19 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
+			var TABLE_SIZE = 10; //Размерность таблицы умножения
+			var tableArray = new Array(TABLE_SIZE);
+
+			for (var i = 0; i < TABLE_SIZE; i++) {
+				tableArray[i] = new Array(TABLE_SIZE);
+				for (var j = 0; j < TABLE_SIZE; j++) {
+					tableArray[i][j]=(i+1)*(j+1);
+				}
+			}
+
+			for (i = 0; i < TABLE_SIZE; i++){
+					console.log(tableArray[i].join("\t"));
+				}
 		}
 	</script>
 </head>

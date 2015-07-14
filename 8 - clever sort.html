@@ -61,7 +61,29 @@
 				}
 			];
 
-			var filteredPeople = people;
+			/*
+			 * Сделал два варианта реализации, которые, по сути, различаются только оформлением.
+			 * 1-й вариант – в качестве параметров для filter() и sort() используются анонимные функции;
+			 * 2-й вариант – предикат для filter() и компаратор для sort() вынесены в отдельные поименованные функции.
+			 */
+			var filteredPeople = people.filter(function(element) {
+				return element.age>=18;
+			}).sort(function(a, b){
+				return a.age - b.age;
+			});
+
+			/*
+			var filteredPeople = people.filter(filterPredicate).sort(sortComparator);
+
+			function filterPredicate(element){
+				return element.age>=18;
+			}
+
+			function sortComparator(a,b){
+				return a.age - b.age;
+			}
+			*/
+
 			console.log(filteredPeople);
 		}
 	</script>

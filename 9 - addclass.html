@@ -13,12 +13,23 @@
 
 	<script type="text/javascript">
 		function addClass(obj, cls) {
+			var classArray = obj.className.split(" ");
 
-		};
+			if(classArray.indexOf(cls) == -1)
+				classArray.push(cls);
+
+			obj.className=classArray.join(" ");
+		}
 
 		function removeClass(obj, cls) {
-			
-		};
+			var classArray = obj.className.split(" ");
+
+			var filteredClassArray = classArray.filter(function(element) {
+				return element != cls;
+			});
+
+			obj.className=filteredClassArray.join(" ");
+		}
 		
 
 		window.onload = function(){

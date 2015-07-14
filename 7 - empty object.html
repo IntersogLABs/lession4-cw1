@@ -12,14 +12,32 @@
 
 
 	<script type="text/javascript">
+		/*
+		 * Реализовал функцию isEmpty() двумя способами:
+		 * isEmpty() - через определение длины массива keys;
+		 * isEmpty2() – через for in.
+		 */
 		function isEmpty(obj) {
+			return Object.keys(obj).length == 0;
+		}
 
-			return false
+		function isEmpty2(obj) {
+			for(var key in obj) {
+				if (obj.hasOwnProperty(key))
+					return false;
+			}
+			return true;
 		}
 
 		window.onload = function(){
+			Object.prototype._field = 1;
 			var obj = {};
-			console.log(isEmpty(obj))
+			console.log(isEmpty(obj));
+			console.log(isEmpty2(obj));
+
+			var obj2 = {prop: 1};
+			console.log(isEmpty(obj2));
+			console.log(isEmpty2(obj2));
 		}
 	</script>
 </head>
