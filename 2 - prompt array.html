@@ -12,10 +12,23 @@
 
 
 	<script type="text/javascript">
-		// window.onload = function(){
-		// 	var value = prompt("Введите значение переменной value", 0);
-		// 	alert("Значение переменной value = " + value);
-		// }
+		window.onload = function(){
+			var next = true;
+			var arrStor = [];
+			var result = 0;
+
+			do {
+				var value = prompt("Введите значение переменной value", "");
+				if(value == null || isNaN(value) || value.trim() == "")
+					next = false;
+				else arrStor.push(+value);
+			}while(next);
+
+			for (var i = 0; i < arrStor.length; i++) {
+				result += arrStor[i];
+			}
+			alert("Сумма введенных значений = " + result);
+		}
 	</script>
 </head>
 <body>

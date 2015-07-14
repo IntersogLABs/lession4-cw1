@@ -13,7 +13,22 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
-			// Удачи!
+			var SEARCH_LIMIT = 100; //Получаем простые числа, не превышающие этого значения
+			var arrStor = new Array(SEARCH_LIMIT+1);
+			var sum = 0;
+
+			for (var i = 2; i*i <= SEARCH_LIMIT; i++)
+				for (var j = i*i, n=1; j <= SEARCH_LIMIT; j = i*i + n*i, n++) {
+					arrStor[j] = false;
+				}
+
+			for ( i = 2; i <= SEARCH_LIMIT; i++) {
+				if(arrStor[i] == undefined){
+					console.log(i);
+					sum += i;
+				}
+			}
+			console.log("Sum of the prime numbers less than %d = %d", SEARCH_LIMIT, sum);
 		}
 	</script>
 </head>
