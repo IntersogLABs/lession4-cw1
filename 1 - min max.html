@@ -13,11 +13,21 @@
 
 	<script type="text/javascript">
 		function min(array){
-
+			return array.reduce(function(min, it){
+				if(it < min){
+					return it
+				}
+				return min
+			})
     	}
 
     	function max(array){
-    		
+			return  array.reduce(function(min, it){
+				if(it > min){
+					return it
+				}
+				return min
+			})
     	}
 
 	    window.onload = function(){

@@ -13,7 +13,34 @@
 
 	<script type="text/javascript">
 		window.onload = function(){
+			var table = multiTable(10)
+			console.log(printTable(table))
 			// Удачи!
+		}
+		function printTable(table){
+			var str = "\n";
+			for (var i = 0; i < table.length; i++) {
+				for (var j = 0; j < table[i].length; j++) {
+					var v = table[i][j];
+					str += v + "\t"
+				}
+				str += "\n"
+			}
+			return str
+		}
+		function multiTable(n){
+			var table = Array(n)
+			for (var i = 0; i < n; i++) {
+				table[i] = Array(n)
+			};
+			for (var i = 0; i < n; i++) {
+				for (var j = i; j < n; j++) {
+					var v = (i+1)*(j+1)
+					table[i][j] = v
+					table[j][i] = v
+				}
+			};
+			return table
 		}
 	</script>
 </head>

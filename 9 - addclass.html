@@ -13,11 +13,18 @@
 
 	<script type="text/javascript">
 		function addClass(obj, cls) {
-
+			var classes = obj.className.split(" ")
+			if(!classes.some(function(clas){return clas === cls})){
+				classes.push(cls)
+				
+			}
+			obj.className = classes.join(" ")
 		};
 
 		function removeClass(obj, cls) {
-			
+			var classes = obj.className.split(" ")
+			classes = classes.filter(function(clas){return clas !== cls})
+			obj.className = classes.join(" ")
 		};
 		
 
