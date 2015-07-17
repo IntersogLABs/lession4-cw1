@@ -13,22 +13,26 @@
 
 	<script type="text/javascript">
 		function min(array){
-			return array.reduce(function(min, it){
-				if(it < min){
-					return it
-				}
-				return min
-			})
+			if (array.length == 0){
+				return Infinity;  //as in Math.min()
+			}
+			else {
+				return array.reduce(function (previous, current) {
+					return (previous > current) ? current : previous;
+				})
+			}
     	}
 
-    	function max(array){
-			return  array.reduce(function(min, it){
-				if(it > min){
-					return it
-				}
-				return min
-			})
-    	}
+		function max(array){
+			if (array.length == 0){
+				return -Infinity;  //as in Math.max()
+			}
+			else {
+				return array.reduce(function (previous, current) {
+					return (previous < current) ? current : previous;
+				})
+			}
+		}
 
 	    window.onload = function(){
 	    	var array = [

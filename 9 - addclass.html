@@ -14,10 +14,7 @@
 	<script type="text/javascript">
 		function addClass(obj, cls) {
 			var classes = obj.className.split(" ")
-			if(!classes.some(function(clas){return clas === cls})){
-				classes.push(cls)
-				
-			}
+			if (classes.indexOf(cls) == -1) classes.push(cls);
 			obj.className = classes.join(" ")
 		};
 
