@@ -12,29 +12,24 @@
 
 
 	<script type="text/javascript">
-		window.onload = function(){
-			// Удачи!
-			console.log(sieve(100))
+
+		function filterPrime(n){
+			var arr = new Array((n + n % 2) / 2);
+			arr[0] = 2;
+			for (var i = 1; i < arr.length; i++){
+				arr[i] = 2 * i + 1;
+			}
+			i = 1;
+			while (arr[i]*arr[i] <= n){
+				arr = arr.filter(function(item, ind){return ind <= i || item % arr[i] != 0});
+				i++;
+			}
+			return arr;
 		}
-		function sieve(n){
-			var all  = []
-			for (var i = 2; i <= n; i++) {
-				all.push(i)
-			};
-			
-			var i = 0
-			var p = all[i]
-			for (; p*p < n; i++) {
-				for (var j = i+1; j < all.length; j++) {
-					if(all[j] % p === 0){
-						all.splice(j, 1)
-						j--;
-					}
-				};
-				p = all[i+1]
-			};
-			return all
-		} 
+
+		window.onload = function(){
+			console.log(filterPrime(100))
+		}
 
 	</script>
 </head>
@@ -64,7 +59,7 @@
 							В случае <code>p=2</code> это будут <code>4,6,8....</code>
 						</li>
 						<li>Поменять значение <code>p</code> на первое не зачеркнутое число после <code>p</code>.</li>
-						<li>Повторить шаги 3-4 пока <code>p<sup>2</sup> &lt; n</code>.</li>
+						<li>Повторить шаги 3-4 пока <code>p<sup>2</sup> &lt;= n</code>.</li>
 						<li>Все оставшиеся не зачеркнутыми числа — простые.</li>
 					</ul>
 
